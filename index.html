@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="GlobalQuiz" />
+		<meta name="keywords" content="HTML, CSS, Javascript" />
+		<link rel="stylesheet" href="src/styles/reset.css" />
+		<link rel="stylesheet" href="src/styles/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>GlobalQuiz</title>
+	</head>
+	<body>
+		<header>
+			<p class="header-title">GlobalQuiz</p>
+		</header>
+		<div class="loading-screen"></div>
+		<div class="main-page-body">
+			<div class="container-your-quizzes hidden">
+				<div class="container-title-button">
+					<p>Your Quizzes</p>
+					<ion-icon
+					onclick="showCreationScreen()"
+					name="add-circle"
+					data-action="create-quiz"
+				></ion-icon>
+				</div>	
+				<div class="your-quizzes"></div>
+			</div>	
+			<div class="create-quiz" data-quiz-type="user-quizzes">
+				<p>You haven't created any quizzes yet :(</p>
+				<button class="button-creation" data-action="create-new-quizz">Create Quiz</button>
+			</div>
+			<div class="all-quizzes">
+				<p>All quizzes</p>
+			</div>
+			<div class="quiz-box" data-quiz-type="general-quizzes"></div>
+		</div>
+		<div class="creation-page-body hidden basic-info-screen"></div>
+		<div class="creation-page-body hidden questions-screen"></div>
+		<div class="creation-page-body hidden levels-screen"></div>
+		<div class="creation-page-body hidden final-screen"></div>
+
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+		<script type="module" src="./src/scripts/modules/main/events.js"></script>
+		<script type="module" src="./src/scripts/components/loading.js"></script>
+		<script type="module" src="./src/scripts/main.js"></script>
+		<script src="./src/scripts/createQuiz.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</body>
+</html>
